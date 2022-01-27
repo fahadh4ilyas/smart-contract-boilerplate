@@ -1,0 +1,46 @@
+{
+  "name": "smart-contract-boilerplate",
+  "version": "1.0.0",
+  "description": "Smart Contract Boilerplate",
+  "author": "Ahmad Fahadh Ilyas",
+  "license": "MIT",
+  "directories": {
+    "contracts": "contracts",
+    "migrations": "migrations",
+    "test": "test"
+  },
+  "scripts": {
+    "lint:contracts": "yarn solium -d contracts",
+    "lint:js-write": "yarn prettier --write \"test/*.{js,jsx,ts,tsx,json,css}\" \"migrations/*.{js,jsx,ts,tsx,json,css}\"",
+    "lint:js": "yarn prettier --check \"test/*.{js,jsx,ts,tsx,json,css}\" \"migrations/*.{js,jsx,ts,tsx,json,css}\"",
+    "lint": "yarn run lint:contracts && yarn run lint:js-write && yarn run lint:js",
+    "build:contracts": "yarn truffle compile",
+    "build": "yarn run build:contracts",
+    "clean:contracts": "yarn rimraf build && truffle compile",
+    "clean:install": "yarn rimraf node_modules && yarn install",
+    "clean": "yarn run clean:contracts && yarn run clean:install",
+    "test": "yarn truffle test",
+    "test:gas-reporter": "yarn run test --reporter eth-gas-reporter",
+    "console": "yarn truffle console",
+    "develop": "yarn truffle develop",
+    "deploy": "yarn truffle migrate --reset",
+    "deploy:kovan": "yarn truffle migrate --reset --network kovan",
+    "deploy:rinkeby": "yarn truffle migrate --reset --network rinkeby",
+    "deploy:ropsten": "yarn truffle migrate --reset --network ropsten"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "eth-gas-reporter": "^0.2.24",
+    "ethlint": "^1.2.5",
+    "openzeppelin-solidity": "^4.4.2",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "truffle": "^5.4.29",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "dependencies": {
+    "bn.js": "^5.2.0",
+    "dotenv": "^11.0.0",
+    "ethers": "^5.5.3"
+  }
+}
