@@ -23,7 +23,7 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
-const HDWalletProvider = require('truffle-hdwallet-provider')
+const HDWalletProvider = require('@truffle/hdwallet-provider')
 
 require('dotenv').config()
 const developmentMnemonic = process.env.DEVELOPMENT_MNEMONIC
@@ -73,11 +73,17 @@ module.exports = {
       gasPrice: 5e9,
       provider: () =>
         new HDWalletProvider(testnetMnemonic, 'https://rinkeby.infura.io/v3/'+infuraId)
+    },
+    mumbai: {
+      network_id: 80001,
+      provider: () =>
+        new HDWalletProvider(testnetMnemonic, 'https://polygon-mumbai.infura.io/v3/'+infuraId)
     }
   },
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
+    useColors: true,
     // timeout: 100000
   },
 
@@ -88,10 +94,10 @@ module.exports = {
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       settings: {          // See the solidity docs for advice about optimization and evmVersion
        optimizer: {
-         enabled: false,
+         enabled: true,
          runs: 200
        },
-      //  evmVersion: "byzantium"
+       evmVersion: "istanbul"
       }
     }
   },
