@@ -55,22 +55,16 @@ module.exports = {
     },
     ropsten: {
       network_id: 3,
-      gas: 6.5e6,
-      gasPrice: 5e9,
       provider: () =>
         new HDWalletProvider(testnetMnemonic, 'https://ropsten.infura.io/v3/'+infuraId)
     },
     kovan: {
       network_id: 42,
-      gas: 6.5e6,
-      gasPrice: 5e9,
       provider: () =>
         new HDWalletProvider(testnetMnemonic, 'https://kovan.infura.io/v3/'+infuraId)
     },
     rinkeby: {
       network_id: 4,
-      gas: 6.5e6,
-      gasPrice: 5e9,
       provider: () =>
         new HDWalletProvider(testnetMnemonic, 'https://rinkeby.infura.io/v3/'+infuraId)
     },
