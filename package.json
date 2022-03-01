@@ -11,6 +11,8 @@
   },
   "scripts": {
     "lint:contracts": "yarn solium -d contracts",
+    "lint:contracts-dry-write": "yarn solium -d contracts --fix-dry-run",
+    "lint:contracts-write": "yarn solium -d contracts --fix",
     "lint:js-write": "yarn prettier --write \"test/*.{js,jsx,ts,tsx,json,css}\" \"migrations/*.{js,jsx,ts,tsx,json,css}\"",
     "lint:js": "yarn prettier --check \"test/*.{js,jsx,ts,tsx,json,css}\" \"migrations/*.{js,jsx,ts,tsx,json,css}\"",
     "lint": "yarn run lint:contracts && yarn run lint:js-write && yarn run lint:js",
