@@ -1,4 +1,4 @@
-# Smart Contract
+# Smart Contract Deployer Boilerplate
 
 This is Boilerplate for Developing Smart Contract in any ethereum-based network. This project is using `yarn` as package manager.
 
