@@ -28,6 +28,8 @@ const HDWalletProvider = require('@truffle/hdwallet-provider')
 require('dotenv').config()
 const developmentMnemonic = process.env.DEVELOPMENT_MNEMONIC
 const developmentEndpoint = process.env.DEVELOPMENT_ENDPOINT
+const testMnemonic = process.env.TEST_MNENOMIC
+const testEndpoint = process.env.TEST_ENDPOINT
 const testnetMnemonic = process.env.TESTNET_MNEMONIC
 const infuraId = process.env.INFURA_ID
 
@@ -48,10 +50,8 @@ module.exports = {
       network_id: '*'
     },
     test: {
-      host: 'localhost',
-      port: 8545,
-      network_id: '*',
-      websockets: true
+      provider: () => new HDWalletProvider(testMnemonic, testEndpoint),
+      network_id: '*'
     },
     ropsten: {
       network_id: 3,
