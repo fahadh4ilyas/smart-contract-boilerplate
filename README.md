@@ -21,7 +21,6 @@ This is Boilerplate for Developing Smart Contract in any ethereum-based network.
 
     * `DEVELOPMENT_MNEMONIC`, can be mnemonic phrase or private key of account who will deploy the smart contract in development network.
     * `DEVELOPMENT_ENDPOINT`, the json-rpc endpoint of development network in format `<protocol>://<host>:<port>`.
-    * `TEST_MNEMONIC`, can be mnemonic phrase or private key of account who will deploy the smart contract in test network.
     * `TEST_ENDPOINT`, the json-rpc endpoint of test network in format `<protocol>://<host>:<port>`.
     * `TESTNET_MNEMONIC`, can be mnemonic phrase or private key of account who will deploy the smart contract in testnet network.
     * `INFURA_ID`, id from your infura account to access testnet network.
