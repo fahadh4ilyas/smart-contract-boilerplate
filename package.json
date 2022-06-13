@@ -39,7 +39,9 @@
   },
   "devDependencies": {
     "@openzeppelin/contracts": "^4.4.0",
+    "@openzeppelin/contracts-upgradeable": "^4.6.0",
     "@openzeppelin/test-helpers": "^0.5.15",
+    "@openzeppelin/truffle-upgrades": "^1.15.0",
     "@truffle/hdwallet-provider": "^2.0.3",
     "env-cmd": "^10.1.0",
     "eth-gas-reporter": "^0.2.24",
