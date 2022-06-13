@@ -49,7 +49,7 @@ module.exports = {
       network_id: '*'
     },
     test: {
-      url: testEndpoint,
+      provider: () => new HDWalletProvider(testnetMnemonic, testEndpoint),
       network_id: '*'
     },
     ropsten: {
